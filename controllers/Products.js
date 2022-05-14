@@ -6,7 +6,12 @@ const index = (req, res) => {
 };
 
 const form = ( req, res) => {
-    res.send("Product.form");
+    if ( typeof req.params.id !== "undefined" ){
+        const product = Products.find(req.params.id)
+        res.render('views/products/edit', { product })
+    } else {
+        res.render('views/products/create')
+    }
 };
 
 const show = ( req, res) => {
@@ -16,7 +21,7 @@ const show = ( req, res) => {
 
 const create = ( req, res) => {
     const product = Products.create(req.body);
-    res.json(product);
+    res.redirect(`/product/${product.id}`);
 };
 
 const update = ( req, res) => {

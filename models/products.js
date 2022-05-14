@@ -13,7 +13,8 @@ const find = (id) => {
     return products.find((p) => p.id === id);
 };
 
-const create =(product) => {
+const create = (product) => {
+    product.id = Number(products[products.length -1].id) + 1 + ""
     products.push(product);
     return products;
 };
@@ -22,7 +23,7 @@ const update = (id, product) => {
     products = products.map((p) => {
         return p.id === id ? product : p;
     });
-    return products;
+    return find(id);
 };
 
 const remove = (id) => {
@@ -30,4 +31,4 @@ const remove = (id) => {
     return products;
 };
 
-module.exports = { all, find,create, update, remove};
+module.exports = { all,  find, create,  update,  remove };
