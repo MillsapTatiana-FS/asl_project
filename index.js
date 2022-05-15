@@ -7,7 +7,6 @@ app.set('view engine', 'twig')
 app.set('views', __dirname + '/templates')
 
 app.get("/", (req,res) => {
-    //res.render("home", {title: "Namaste", message: "Namaste and welcome!"});
     res.render( "views/home",  { name: 'World!'})
 });
 
