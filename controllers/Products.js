@@ -1,7 +1,7 @@
-const Products = require("../models/Products");
+const { Product } = require('../models');
 
 const index = (req, res) => {
-    const products = Products.all();
+    const products = Product.all();
     res.render('views/products/index', { products });
 };
 
@@ -21,16 +21,16 @@ const show = ( req, res) => {
 
 const create = ( req, res) => {
     const product = Products.create(req.body);
-    res.redirect(`/product/${product.id}`);
+    res.redirect('/product/' + product.id);
 };
 
 const update = ( req, res) => {
     const product = Products.update(req.params.id, req.body);
-    res.json(product);
+    resredirect('/products/' + req.params.id);
 };
 
 const remove = (req,res) => {
     const product = Products.remove(req.params.id);
-    res.json(product);
+    res.redirect('/products');
 };
 module.exports = { index, form, show, create, update, remove };
