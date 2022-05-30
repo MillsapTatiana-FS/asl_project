@@ -1,13 +1,15 @@
-{% include "partials/_header.twig" %}
-<h1>Manage All Products</h1>
+{% extends  'layout/base.twig' %}
 
-<ul>
-    {% for product in products %}
-        <li>
-            <a href="/products/{{ product.id }}">{{ product.title}}{{ product.slug }}</a>
-            <a href="/products/ {{ product.id }}/edit">Edit</a>
-            <a href="/products/ {{ product.id }}/delete">Delete</a>
-        </li>
-    {% endfor %}
+{% block main_content %}
+    <h2>All Products</h2>
+    <ul>
+        {% for product in products %}
+            <li>
+                {{ product.title}} 
+                <a href="/products/ {{ product.id }}">Edit</a>
+                <a href="/products/ {{ product.id }}/delete">Delete</a>
+            </li>
+        {% endfor %}
+    </ul>
     <a href="/products/new">Create New Product</a>
-</ul>
+{% endblock %}
