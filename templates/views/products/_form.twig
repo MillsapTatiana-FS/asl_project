@@ -1,10 +1,10 @@
-<form method="POST" action="/products{% if product.id %}/{{ product.id }}{% endif %}">
-
-    <input name="id" type="hidden" value="{{ product.id }}" />
-
+<form method="POST" action="/products/{% if product.id %}/{{ product.id }}{% endif %}">
+    {% if product.id %}
+        <input name="id" type="hidden" value="{{ product.id }}" />
+    {% endif %}
     <div>
         <label for="title">Product Title:</label>
-        <input type="text" name="title" value="{{ product.title }}"/>
+        <input type="text" name="title" id="title" value="{{ product.title }}"/>
     </div>
     <div>
         <label for="id">Product ID:</label>

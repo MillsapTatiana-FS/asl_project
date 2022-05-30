@@ -1,16 +1,16 @@
 {% extends 'layouts/base.twig' %}
 
 {% block main_content %}
-    <h2>About {{ product.title }}</h2>
+    <h2>About {{ variant.title }}</h2>
     <ul style="list-style: none;">
         <li>
-            <label>Id: </label>  {{product.id }}
+            <label>Id: </label>  {{variant.id }}
         </li>
         <li>
-            <label> Title: </label> {{ product.title }}
+            <label> Title: </label> {{ variant.title }}
         </li>
         <li>
-            <label> Slug: </label> {{ product.slug }}
+            <label> Product: </label> {{ product.title }}
         </li>
         <li>
             <label> Description: </label> {{ product.description }}
@@ -23,7 +23,7 @@
         </li>
     </ul>
     <p>
-        <a href="/products/{{ product.id }}/edit">Edit Product</a>
-        <a href="/products/{{ product.id }}/delete">Delete Product</a>
+        <a href="/variants/{{ variant.id }}/edit">Edit Product</a>
+        <a href="/variants/{{ variant.id }}/delete">Delete Product</a>
     </p>
 {% endblock %}
