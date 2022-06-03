@@ -1,25 +1,30 @@
-<form method="POST" action="/products/{% if product.id %}/{{ product.id }}{% endif %}">
-    {% if product.id %}
-        <input name="id" type="hidden" value="{{ product.id }}" />
-    {% endif %}
-    <div>
-        <label for="title">Product Title:</label>
-        <input type="text" name="title" id="title" value="{{ product.title }}"/>
-    </div>
-    <div>
-        <label for="id">Product ID:</label>
-        <input type="number" name="id" value="{{ product.Id }}"/>
-    </div>
-    <div>
-        <label for="slug">Product Slug:</label>
-        <input id="slug" type="text" name="slug" value="{{ product.slug }}"/>
-    </div>
-    <div>
-        <label for="price">Product Price:</label>
-        <input id="price" type="number" name="price" value="{{ product.price }}"/>
-    </div>
-    <div>
-        <button  type="submit">Save Product</button>
-    </div>
-
-</form>
+<form method="POST" action="/products/{% if product.id %}{{ product.id }}{% endif %}">
+	{% if product.id %}
+		<input type="hidden" name="id" value="{{ product.id }}">
+	{% endif %}
+	<div>
+		<label for="title">Title:</label>
+		<br />
+		<input type="text" name="title" id="title" value="{{ product.title }}" />
+	</div>
+	<div>
+		<label for="slug">Slug:</label>
+		<br />
+		<input type="text" name="slug" id="slug" value="{{ product.slug }}" />
+	</div>
+	<div>
+		<label for="price">Price:</label>
+		<br />
+		<input type="text" name="price" id="price" value="{{ product.price }}" />
+	</div>
+	<div>
+		<label for="price">Is Published?</label>
+		<input type="checkbox" name="is_published" id="is_published" value="true" {% if product.is_published %}checked="checked"{% endif %} />
+	</div>
+	<div>
+		<label for="description">Product Description:</label><br />
+		<textarea rows="10" cols="50" name="description" id="description">{{ product.description }}</textarea>
+	</div>
+	<div>
+		<input type="submit" type="submit" />
+	</div>

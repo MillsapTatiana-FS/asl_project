@@ -7,7 +7,7 @@ const index = async (req, res) => {
 }
 
 const form = async ( req, res) => {
-    if ( typeof req.params.id !== "undefined" ){
+    if (req.params.id) {
         const product = await Product.findByPk(req.params.id)
         res.render('views/products/edit', { product })
     } else {
