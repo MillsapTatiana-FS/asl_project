@@ -10,6 +10,6 @@ router.get('/:id/edit', variantCtrl.form)
 router.post('/', variantCtrl.create)
 router.post('/:id', variantCtrl.update)
 router.delete('/:id', variantCtrl.remove)
-router.all('/:id/delete', variantCtrl.remove)
+router.get('/:id/delete', variantCtrl.remove)
 
 module.exports = router;

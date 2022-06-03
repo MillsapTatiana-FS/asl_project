@@ -29,13 +29,14 @@ const create = async ( req, res) => {
 
 const update = async ( req, res) => {
     const variant = await Variant.update( req.body, {
-        where: { id:Number( req.params.id) }
+        where: { id: Number( req.params.id) }
      })
     res.redirect('/variants/' + req.params.id)
 }
 
 const remove = async  (req,res) => {
-    const variant = await Variant.destroy({ where : { id:req.params.id}})
+    const variants = await Variant.destroy({ where : { id: req.params.id }})
     res.redirect('/variants')
 }
+
 module.exports = { index, form, show, create, update, remove }

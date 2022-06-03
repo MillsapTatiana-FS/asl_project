@@ -1,5 +1,5 @@
 //Where all routes will be defined, process incoming requests and map to controller
-const express = require('Express')
+const express = require('express')
 const router = express.Router()
 const productCtrl = require('../controllers/Products')
 
@@ -10,6 +10,6 @@ router.get('/:id/edit', productCtrl.form)
 router.post('/', productCtrl.create)
 router.post('/:id', productCtrl.update)
 router.delete('/:id', productCtrl.remove)
-router.all('/:id/delete', productCtrl.remove)
+router.get('/:id/delete', productCtrl.remove)
 
 module.exports = router;

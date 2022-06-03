@@ -13,13 +13,15 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       models.Variant.hasMany(models.Image)
       models.Variant.belongsTo(models.Product)
-
     }
   }
   Variant.init({
+    productId: DataTypes.INTEGER,
     title: DataTypes.STRING,
     price: DataTypes.FLOAT,
-    productId: DataTypes.INTEGER
+    description: DataTypes.TEXT,
+    slug: DataTypes.STRING,
+    inventory: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Variant',
