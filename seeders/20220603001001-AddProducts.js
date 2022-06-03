@@ -1,7 +1,7 @@
 'use strict';
 
 //reusable Description
-const description = `Run it up the flag pole spinning our wheels. This is not the hill i want to die on digital literacy yet dear hiring manager: yet run it up the flagpole, ping the boss and circle back so service as core &innovations as power makes our brand globalize.`
+const description = `Thebuddha doublerainbow aura biomat organic ancientspiritualtraditions sacredsexuality gojiberries pastlife, healingtonic co-op divinefeminine herbaltea visualization vinyasa macrobiotic, yoni morphicresonance forest vitamix popcornwithbrewersyeast yerbamatte hempseed. Ancientspiritualtraditions healingtonic rainbow integral sacredintegration midwifery nonlinear breathwork rawthenticself singingbowltherapy, vinyasa malabeads monogamish radicalhonesty coldplunge prius kombucha beltane tapping, mind-body feeling.`
 
 const [ createdAt, updatedAt ] = [ new Date(), new Date() ]
 
@@ -21,6 +21,22 @@ module.exports = {
         title: 'Smoky Quartz', 
         slug: 'chakra-crystals', 
         price: 12.99, 
+        is_published: true,
+        description, createdAt, updatedAt
+      },
+      { 
+        id: 3, 
+        title: 'Carnelian', 
+        slug: 'chakra-crystals', 
+        price: 9.99, 
+        is_published: true,
+        description, createdAt, updatedAt
+      },
+      { 
+        id: 4, 
+        title: 'Azurite', 
+        slug: 'chakra-crystals', 
+        price: 17.99, 
         is_published: true,
         description, createdAt, updatedAt
       }
